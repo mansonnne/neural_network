@@ -86,6 +86,15 @@ neural_network/
 7. [Этап 7: Обучение модели](docs/stages/07_model_training.md)
 8. [Этап 8: Валидация модели](docs/stages/08_validation.md)
 
+## 🧪 Бейзлайн
+
+- EDA: `python src/eda_baseline.py` (по умолчанию сэмпл 5k) или `--full`
+- Модель: `python src/baseline_train.py` (сэмпл 5k) или `--full`
+- Пайплайн: дроп признаков с пропусками >0.65, числовые — median + StandardScaler, категориальные — most_frequent + OneHot, LogisticRegression(class_weight='balanced', max_iter=500, n_jobs=1), сплит stratify 60/20/20.
+- Метрики (полный датасет):
+  - val: acc 0.6872, prec 0.1612, rec 0.6833, f1 0.2608, roc_auc 0.7505
+  - test: acc 0.6847, prec 0.1592, rec 0.6781, f1 0.2578, roc_auc 0.7455
+
 ## 🔄 Процесс работы
 
 На каждом этапе мы:
